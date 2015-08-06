@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Update profile{% endblock %}
+{% block head %}Update profile{% endblock %}
+{% block content %}
+    <p>Welcome {{ user.username }} :) :) </p>
+    <p>User Name : {{ user.username }} </p>
+    <p>User Email : {{ user.email }} </p>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div> Old password: <input type="password" name="oldpass" /> </div> </br>
+      <div> New password: <input type="password" name="newpass" /> </div> </br>
+      <div> Confirm new password: <input type="password" name="newpassrep" /> </div> </br>
+      <div> {{message}} </div> </br>
+      <input type="Submit" value="Update" /> </br>
+    </form>
+    <a href="/logout/">Logout</a> </br>
+    <a href="/home/">home</a>
+{% endblock %}
